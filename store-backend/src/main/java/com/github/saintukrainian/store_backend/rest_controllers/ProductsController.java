@@ -1,7 +1,7 @@
-package com.github.saintukrainian.online_shop.rest_controllers;
+package com.github.saintukrainian.store_backend.rest_controllers;
 
-import com.github.saintukrainian.online_shop.dao.ProductRepository;
-import com.github.saintukrainian.online_shop.entity.Product;
+import com.github.saintukrainian.store_backend.dao.ProductRepository;
+import com.github.saintukrainian.store_backend.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

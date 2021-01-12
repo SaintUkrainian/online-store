@@ -1,4 +1,4 @@
-package com.github.saintukrainian.online_shop.entity;
+package com.github.saintukrainian.store_backend.entity;
 
 import javax.persistence.*;
 

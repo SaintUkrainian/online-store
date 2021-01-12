@@ -1,13 +1,13 @@
-package com.github.saintukrainian.online_shop;
+package com.github.saintukrainian.store_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OnlineShopApplication {
+public class StoreBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OnlineShopApplication.class, args);
+		SpringApplication.run(StoreBackendApplication.class, args);
 	}
 
 }

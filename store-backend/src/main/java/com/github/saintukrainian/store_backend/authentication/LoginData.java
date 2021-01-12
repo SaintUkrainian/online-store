@@ -1,4 +1,4 @@
-package com.github.saintukrainian.online_shop.authentication;
+package com.github.saintukrainian.store_backend.authentication;
 
 public class LoginData {
     private String login;
