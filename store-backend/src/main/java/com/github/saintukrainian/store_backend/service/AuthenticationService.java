@@ -27,4 +27,9 @@ public class AuthenticationService {
     public boolean loginUser(LoginData loginData) {
         return userDAO.loginUser(loginData);
     }
+
+    @Transactional
+    public UserCredentials getUserCredentials(LoginData loginData) {
+        return userDAO.getUserCredentials(loginData);
+    }
 }
