@@ -11,6 +11,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/products")
 public class ProductsController {
 
     private ProductRepository productRepository;
@@ -26,12 +27,12 @@ public class ProductsController {
         return "There's no such element!";
     }
 
-    @GetMapping("/products")
+    @GetMapping("/")
     public List<Product> getProducts() {
         return productRepository.findAll();
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("{id}")
     public Product getProductDescription(@PathVariable Integer id) {
         Optional<Product> product = productRepository.findById(id);
         if(product.isPresent()) {
