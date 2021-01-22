@@ -4,6 +4,7 @@ import com.github.saintukrainian.store_backend.authentication.LoginData;
 import com.github.saintukrainian.store_backend.authentication.SafeUserCredentials;
 import com.github.saintukrainian.store_backend.authentication.UserCredentials;
 
+import com.github.saintukrainian.store_backend.exceptions.UserAlreadyRegisteredException;
 import com.github.saintukrainian.store_backend.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,24 +29,39 @@ public class AuthenticationController {
         return HttpStatus.NOT_FOUND;
     }
 
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public UserAlreadyRegisteredException userAlreadyRegistered(
+            IllegalArgumentException e) {
+        return new UserAlreadyRegisteredException(e.getMessage());
+    }
+
     @PostMapping("/register")
-    public HttpStatus register(@RequestBody UserCredentials userCredentials) {
+    public SafeUserCredentials register(
+            @RequestBody UserCredentials userCredentials)
+            throws IllegalArgumentException {
         boolean registered = authenticationService
                 .registerNewUser(userCredentials);
-        return registered ? HttpStatus.OK : HttpStatus.ALREADY_REPORTED;
+        if (registered) {
+            SafeUserCredentials safeUserCredentials = new SafeUserCredentials();
+            safeUserCredentials.setSafeUserData(userCredentials);
+
+            return safeUserCredentials;
+        } else {
+            throw new IllegalArgumentException("User already registered!");
+        }
+
     }
 
     @PostMapping("/login")
     public SafeUserCredentials login(@RequestBody LoginData loginData) {
         boolean loggedIn = authenticationService.loginUser(loginData);
-        if(loggedIn) {
-            UserCredentials userCredentials = authenticationService.getUserCredentials(loginData);
-            SafeUserCredentials safeUserCredentials = new SafeUserCredentials();
+        if (loggedIn) {
+            UserCredentials userCredentials = authenticationService
+                    .getUserCredentials(loginData);
 
-            safeUserCredentials.setId(userCredentials.getId());
-            safeUserCredentials.setFirstName(userCredentials.getFirstName());
-            safeUserCredentials.setLastName(userCredentials.getLastName());
-            safeUserCredentials.setEmail(userCredentials.getEmail());
+            SafeUserCredentials safeUserCredentials = new SafeUserCredentials();
+            safeUserCredentials.setSafeUserData(userCredentials);
 
             return safeUserCredentials;
         } else {

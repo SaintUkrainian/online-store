@@ -48,6 +48,13 @@ public class SafeUserCredentials {
         this.email = email;
     }
 
+    public void setSafeUserData(UserCredentials userCredentials) {
+        this.setId(userCredentials.getId());
+        this.setFirstName(userCredentials.getFirstName());
+        this.setLastName(userCredentials.getLastName());
+        this.setEmail(userCredentials.getEmail());
+    }
+
     @Override
     public String toString() {
         return "SafeUserCredentials{" + "id=" + id + ", firstName='" + firstName
