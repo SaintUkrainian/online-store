@@ -1,0 +1,25 @@
+.Product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    border-radius: 15px;
+    background: white;
+    color: black;
+    margin: 10px auto auto;
+    transition: all 0.2s ease-out;
+    -webkit-backface-visibility:hidden;
+}
+
+.Product img {
+    width: 200px;
+    height: 215px;
+}
+
+.description {
+    height: 100px;
+    width: 100%;
+    overflow: scroll;
+}
