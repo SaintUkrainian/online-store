@@ -15,6 +15,7 @@ public class ProductType {
     @Column(name = "product_type")
     private String productType;
 
+    // type - name of property in Product class
     @OneToMany(mappedBy = "type")
     private List<Product> products;
 

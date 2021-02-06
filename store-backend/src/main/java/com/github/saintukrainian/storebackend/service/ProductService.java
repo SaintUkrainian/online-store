@@ -29,7 +29,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public List<Product> findByType(String type) {
-        return productDAO.findByType(type);
+    public List<Product> findByTypeId(Integer type) {
+        return productDAO.findByTypeId(type);
     }
 }

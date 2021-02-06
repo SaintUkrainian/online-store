@@ -17,11 +17,11 @@ public class ProductDAO {
         this.entityManager = entityManager;
     }
 
-    public List<Product> findByType(String type) {
+    public List<Product> findByTypeId(Integer typeId) {
         Session session = entityManager.unwrap(Session.class);
         Query<Product> findByTypeQuery = session
-                .createQuery("from Product where type =: type", Product.class);
-        findByTypeQuery.setParameter("type", type);
+                .createQuery("from Product where type.id =: typeId", Product.class);
+        findByTypeQuery.setParameter("typeId", typeId);
 
         return findByTypeQuery.getResultList();
     }
