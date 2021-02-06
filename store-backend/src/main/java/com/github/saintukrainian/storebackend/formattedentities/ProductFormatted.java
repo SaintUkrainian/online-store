@@ -1,5 +1,7 @@
 package com.github.saintukrainian.storebackend.formattedentities;
 
+import com.github.saintukrainian.storebackend.entity.Product;
+
 public class ProductFormatted {
 
     private Integer id;
@@ -74,5 +76,14 @@ public class ProductFormatted {
 
     public void setTypeName(String typeName) {
         this.typeName = typeName;
+    }
+
+    public void setFromUnFormatted(Product product) {
+        this.setDescription(product.getDescription());
+        this.setId(product.getId());
+        this.setPrice(product.getPrice());
+        this.setTypeId(product.getType().getId());
+        this.setTypeName(product.getType().getProductType());
+        this.setName(product.getName());
     }
 }

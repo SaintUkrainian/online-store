@@ -55,17 +55,13 @@ public class ProductsController {
     public List<ProductFormatted> getProductsByMultipleParams(
             @RequestParam Map<String, String> params) {
         Integer productTypeId = Integer.parseInt(params.get("typeId"));
+
         List<Product> productsByType = productService
                 .findByTypeId(productTypeId);
         List<ProductFormatted> formattedProductsByType = productsByType.stream()
                 .map(p -> {
                     ProductFormatted productFormatted = new ProductFormatted();
-                    productFormatted.setDescription(p.getDescription());
-                    productFormatted.setId(p.getId());
-                    productFormatted.setPrice(p.getPrice());
-                    productFormatted.setTypeId(p.getType().getId());
-                    productFormatted.setTypeName(p.getType().getProductType());
-                    productFormatted.setName(p.getName());
+                    productFormatted.setFromUnFormatted(p);
                     return productFormatted;
                 }).collect(Collectors.toList());
         if (productsByType.size() == 0) {
