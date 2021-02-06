@@ -1,8 +1,5 @@
 package com.github.saintukrainian.storebackend.restcontrollers;
 
-import com.github.saintukrainian.storebackend.dao.ProductDAO;
-import com.github.saintukrainian.storebackend.dao.ProductRepository;
-import com.github.saintukrainian.storebackend.dao.ProductTypeRepository;
 import com.github.saintukrainian.storebackend.entity.Product;
 import com.github.saintukrainian.storebackend.exceptions.ProductsNotFoundException;
 import com.github.saintukrainian.storebackend.formattedentities.ProductFormatted;
@@ -18,15 +15,11 @@ import java.util.stream.Collectors;
 @RequestMapping("/products")
 public class ProductsController {
 
-    //    private ProductRepository productService;
     private ProductService productService;
-    private ProductTypeRepository productTypeRepository;
 
     @Autowired
-    public ProductsController(ProductService productService,
-            ProductTypeRepository productTypeRepository) {
+    public ProductsController(ProductService productService) {
         this.productService = productService;
-        this.productTypeRepository = productTypeRepository;
     }
 
     @ExceptionHandler

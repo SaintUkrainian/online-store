@@ -1,7 +1,6 @@
 package com.github.saintukrainian.storebackend.entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "products")
