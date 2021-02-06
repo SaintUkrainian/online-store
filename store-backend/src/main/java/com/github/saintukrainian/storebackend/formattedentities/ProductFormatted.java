@@ -10,19 +10,22 @@ public class ProductFormatted {
 
     private Float price;
 
-    private String type;
+    private Integer typeId;
+
+    private String typeName;
 
     public ProductFormatted() {
 
     }
 
     public ProductFormatted(Integer id, String name, String description,
-            Float price, String type) {
+            Float price, Integer typeId, String typeName) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.type = type;
+        this.typeId = typeId;
+        this.typeName = typeName;
     }
 
     public Integer getId() {
@@ -57,11 +60,19 @@ public class ProductFormatted {
         this.price = price;
     }
 
-    public String getType() {
-        return type;
+    public Integer getTypeId() {
+        return typeId;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 }

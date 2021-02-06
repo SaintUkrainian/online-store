@@ -63,7 +63,8 @@ public class ProductsController {
                     productFormatted.setDescription(p.getDescription());
                     productFormatted.setId(p.getId());
                     productFormatted.setPrice(p.getPrice());
-                    productFormatted.setType(p.getType().getProductType());
+                    productFormatted.setTypeId(p.getType().getId());
+                    productFormatted.setTypeName(p.getType().getProductType());
                     productFormatted.setName(p.getName());
                     return productFormatted;
                 }).collect(Collectors.toList());
