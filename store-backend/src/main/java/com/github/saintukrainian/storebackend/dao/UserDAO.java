@@ -1,7 +1,7 @@
-package com.github.saintukrainian.store_backend.dao;
+package com.github.saintukrainian.storebackend.dao;
 
-import com.github.saintukrainian.store_backend.authentication.LoginData;
-import com.github.saintukrainian.store_backend.authentication.UserCredentials;
+import com.github.saintukrainian.storebackend.authentication.LoginData;
+import com.github.saintukrainian.storebackend.authentication.UserCredentials;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;

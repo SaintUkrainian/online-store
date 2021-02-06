@@ -1,8 +1,8 @@
-package com.github.saintukrainian.store_backend.service;
+package com.github.saintukrainian.storebackend.service;
 
-import com.github.saintukrainian.store_backend.authentication.LoginData;
-import com.github.saintukrainian.store_backend.authentication.UserCredentials;
-import com.github.saintukrainian.store_backend.dao.UserDAO;
+import com.github.saintukrainian.storebackend.authentication.LoginData;
+import com.github.saintukrainian.storebackend.authentication.UserCredentials;
+import com.github.saintukrainian.storebackend.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

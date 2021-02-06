@@ -1,11 +1,10 @@
-package com.github.saintukrainian.store_backend.rest_controllers;
+package com.github.saintukrainian.storebackend.restcontrollers;
 
-import com.github.saintukrainian.store_backend.authentication.LoginData;
-import com.github.saintukrainian.store_backend.authentication.SafeUserCredentials;
-import com.github.saintukrainian.store_backend.authentication.UserCredentials;
-
-import com.github.saintukrainian.store_backend.exceptions.UserAlreadyRegisteredException;
-import com.github.saintukrainian.store_backend.service.AuthenticationService;
+import com.github.saintukrainian.storebackend.authentication.LoginData;
+import com.github.saintukrainian.storebackend.authentication.SafeUserCredentials;
+import com.github.saintukrainian.storebackend.authentication.UserCredentials;
+import com.github.saintukrainian.storebackend.exceptions.UserAlreadyRegisteredException;
+import com.github.saintukrainian.storebackend.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

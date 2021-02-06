@@ -1,4 +1,4 @@
-package com.github.saintukrainian.store_backend;
+package com.github.saintukrainian.storebackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

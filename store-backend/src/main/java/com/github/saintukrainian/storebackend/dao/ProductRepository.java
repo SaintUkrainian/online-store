@@ -1,6 +1,6 @@
-package com.github.saintukrainian.store_backend.dao;
+package com.github.saintukrainian.storebackend.dao;
 
-import com.github.saintukrainian.store_backend.entity.Product;
+import com.github.saintukrainian.storebackend.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

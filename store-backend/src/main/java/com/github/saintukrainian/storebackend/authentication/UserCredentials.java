@@ -1,4 +1,4 @@
-package com.github.saintukrainian.store_backend.authentication;
+package com.github.saintukrainian.storebackend.authentication;
 
 import javax.persistence.*;
 

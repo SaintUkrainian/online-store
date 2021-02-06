@@ -1,4 +1,4 @@
-package com.github.saintukrainian.store_backend;
+package com.github.saintukrainian.storebackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

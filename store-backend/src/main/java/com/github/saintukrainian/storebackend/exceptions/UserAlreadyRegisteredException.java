@@ -1,6 +1,4 @@
-package com.github.saintukrainian.store_backend.exceptions;
-
-import com.github.saintukrainian.store_backend.authentication.UserCredentials;
+package com.github.saintukrainian.storebackend.exceptions;
 
 public class UserAlreadyRegisteredException {
     private String message;
